@@ -6,6 +6,10 @@ import { UsersModule } from './users/users.module';
 import { WishesModule } from './wishes/wishes.module';
 import { WishlistsModule } from './wishlists/wishlists.module';
 import { OffersModule } from './offers/offers.module';
+import { User } from './users/entities/user.entity';
+import { Offer } from './offers/entities/offer.entity';
+import { Wish } from './wishes/entities/wish.entity';
+import { WishList } from './wishlists/entities/wishlist.entity';
 
 @Module({
   imports: [
@@ -15,8 +19,8 @@ import { OffersModule } from './offers/offers.module';
       port: 5432,
       username: 'student',
       password: 'student',
-      database: 'nest_project',
-      entities: [],
+      database: 'kupipodariday',
+      entities: [User, Offer, Wish, WishList],
       synchronize: true,
     }),
     UsersModule,
